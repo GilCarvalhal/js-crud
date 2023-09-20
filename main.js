@@ -40,7 +40,16 @@ const createClient = (client) => {
     setLocalStorage(dbClient);
 }
 
+// Interação com o layout
+const saveClient = () => {
+    if (isValidFields()) {
+        console.log('Cadastranso cliente');
+    }
+}
+
 // Eventos
 document.getElementById('cadastrarCliente').addEventListener('click', openModal)
 
 document.getElementById('modalClose').addEventListener('click', closeModal)
+
+document.getElementById('salvar').addEventListener('click', saveClient)
