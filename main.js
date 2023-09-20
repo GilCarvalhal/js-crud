@@ -40,10 +40,14 @@ const createClient = (client) => {
     setLocalStorage(dbClient);
 }
 
+const isValidFields = () => {
+    return document.getElementById('form').reportValidity()
+}
+
 // Interação com o layout
 const saveClient = () => {
     if (isValidFields()) {
-        console.log('Cadastranso cliente');
+        console.log('Cadastrando cliente');
     }
 }
 
