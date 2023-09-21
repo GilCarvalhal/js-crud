@@ -2,7 +2,10 @@
 
 const openModal = () => document.getElementById('modal').classList.add('active')
 
-const closeModal = () => document.getElementById('modal').classList.remove('active')
+const closeModal = () => {
+    clearFields()
+    document.getElementById('modal').classList.remove('active')
+}
 
 const tempClient = {
     nome: 'Gilberto',
@@ -45,6 +48,12 @@ const isValidFields = () => {
 }
 
 // Interação com o layout
+const clearFields = () => {
+    const fields = document.querySelectorAll('.modal-field');
+    fields.forEach(field => field.value = '')
+}
+
+
 const saveClient = () => {
     if (isValidFields()) {
         const client = {
@@ -54,7 +63,7 @@ const saveClient = () => {
             cidade: document.getElementById('cidade').valur
         }
         createClient(client)
-        console.log('Cadastrando cliente');
+        closeModal()
     }
 }
 
